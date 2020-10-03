@@ -28,6 +28,18 @@ if(playerInput == 1){
       playerMove = 'nożyce';
   }
 
+  printMessage('Twój ruch drogi userze to: ' + playerInput);
+
+  if (isNaN(playerInput)||(playerInput>3)) {
+    printMessage('Tak to sobie graj sam!');
+  } else if ((computerMove == 'kamień' && playerMove == 'papier') || (computerMove == 'nożyce' && playerMove == 'kamień') || (computerMove == 'papier' && playerMove == 'nożyce'  )){
+    printMessage('Ty wygrywasz!');
+  } else if (computerMove == playerMove) {
+    printMessage('No i remis!');
+  } else {
+    printMessage('Komputer jest the best!');
+  }
+
 function printMessage(msg){
 	let div = document.createElement('div');
 	div.innerHTML = msg;
